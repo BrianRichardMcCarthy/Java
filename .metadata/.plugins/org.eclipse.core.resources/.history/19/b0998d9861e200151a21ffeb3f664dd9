@@ -1,0 +1,39 @@
+package multimediaProgramming.weekOne;
+/*
+* Student Name: Brian McCarthy
+* Student Number: 20063914
+* Date: 12/1/2016
+* Program Name: TwoDArray
+* */
+public class TwoDArray {
+ 
+ public static void main(String args[]) {
+     
+      // Program to store user generated numbers into a two dimension array
+      // and print values at each index.
+     
+     // get the length of outer array and inner array
+     System.out.println("Enter size of outer array: ");
+     int one = EasyScanner.nextInt();
+     System.out.println("Enter size of inner array: ");
+     int two = EasyScanner.nextInt();
+     
+     // declare the 2d array
+     int[][] twoDArray = new int[one][two];
+     
+     // enter values for the array
+     for (int a = 0; a < twoDArray.length; a++) {
+         for (int b = 0; b < twoDArray[a].length; b++) {
+             System.out.println("Enter Position: " + a + " Number: " + b);
+             twoDArray[a][b] = EasyScanner.nextInt();
+         }
+     }
+     
+     // print values for the array
+     for (int c = 0; c < twoDArray.length; c++) {
+         for (int d = 0; d < twoDArray[c].length; d++)
+             System.out.print(twoDArray[c][d] + "\t");
+         System.out.println();
+     }
+ }   
+}
