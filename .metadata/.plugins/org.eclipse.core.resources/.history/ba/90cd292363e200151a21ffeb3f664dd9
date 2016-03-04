@@ -1,0 +1,15 @@
+package multimediaProgramming.weekOne;
+/*
+ * Please note this code was provided by 
+ * the lecturer as part of an assignment
+ * for reviewing basics of object oriented
+ * programming, I didn't write or implement 
+ * any of the code in this file. 
+ * Please see SimpleDatePrgram for my 
+ * implementation of this class and assignment
+ * */
+
+
+public class SimpleDate {
+
+}
