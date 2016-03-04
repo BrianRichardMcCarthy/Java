@@ -1,0 +1,22 @@
+package testHello;
+
+import java.awt.Toolkit;
+
+import javax.swing.JFrame;
+
+public class Hello extends JFrame {
+
+	private static final Toolkit kit = Toolkit.getDefaultToolkit();
+	private static final int HEIGHT = (int) kit.getScreenSize().getHeight(), WIDTH = (int) kit.getScreenSize().getWidth();
+	
+	public Hello() {
+		setTitle("Hello World");
+		setLocation(HEIGHT/4, WIDTH/4);
+		setSize(HEIGHT/4, WIDTH/4);
+		setIconImage(kit.getImage("/images/profile.jpg"));
+	}
+	
+	public static void main(String[] args) {
+		new Hello();
+	}
+}
