@@ -1,0 +1,25 @@
+package multimediaProgramming.finalAssignment;
+
+import javax.swing.JFrame;
+
+public class MediaPlayer extends JFrame {
+
+	private Button play = new Button(false), stop  = new Button(false);
+	private String title = "Media Player";
+	public MediaPlayer() {
+		set();
+	}
+	
+	private void set() {
+		setTitle(title);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		// setSize();
+		// setLocation();
+		setVisible(true);
+	}
+	
+	public static void main(String[] args) {
+		new MediaPlayer();
+	}
+
+}

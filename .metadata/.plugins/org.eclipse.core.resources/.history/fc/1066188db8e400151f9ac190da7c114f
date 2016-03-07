@@ -1,0 +1,24 @@
+package multimediaProgramming.finalAssignment;
+
+import javax.swing.JButton;
+
+public class Button extends JButton {
+	
+	private boolean state = false;
+	
+	public Button(boolean state, String name) {
+		setText(name);
+		setEnabled(state);
+		setState(state);
+	}
+	
+	public void setState(boolean state) {
+		setEnabled(this.state = state);
+		
+	}
+	
+	public void press() {
+		setState(!state);
+	}
+	
+}
