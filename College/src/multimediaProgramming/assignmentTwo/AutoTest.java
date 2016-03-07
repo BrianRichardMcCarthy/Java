@@ -4,7 +4,7 @@
  * Program: Implement Auto class
  * Date: 1/28/2016
  */
-package multimediaProgramming.weekTwo;
+package multimediaProgramming.assignmentTwo;
 
 public class AutoTest {
 

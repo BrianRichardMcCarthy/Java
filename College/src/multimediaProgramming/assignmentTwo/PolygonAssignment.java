@@ -5,7 +5,7 @@
  * Program Name: PolygonAssignment
  * */
  
-package multimediaProgramming.weekTwo;
+package multimediaProgramming.assignmentTwo;
  // import java libraries
 import java.awt.Polygon;
 import java.awt.Color;

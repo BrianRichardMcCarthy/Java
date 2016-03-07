@@ -1,4 +1,4 @@
-package multimediaProgramming.weekOne;
+package multimediaProgramming.assignmentOne;
 
 /*
  * Student Name: Brian McCarthy

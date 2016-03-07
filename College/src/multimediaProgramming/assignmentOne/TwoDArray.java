@@ -1,4 +1,4 @@
-package multimediaProgramming.weekOne;
+package multimediaProgramming.assignmentOne;
 
 import java.util.Scanner;
 

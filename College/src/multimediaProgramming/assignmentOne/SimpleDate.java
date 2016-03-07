@@ -1,4 +1,4 @@
-package multimediaProgramming.weekOne;
+package multimediaProgramming.assignmentOne;
 /*
  * Please note this code was provided by 
  * the lecturer as part of an assignment

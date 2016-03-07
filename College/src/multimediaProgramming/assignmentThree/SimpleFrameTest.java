@@ -5,7 +5,7 @@
  * Assignment Name:	6.1. SimpleFrameTest
  * Program Description: Program to run new instance of SimpleFrame
  * */
-package multimediaProgramming.weekThree;
+package multimediaProgramming.assignmentThree;
 
 public class SimpleFrameTest {
 	

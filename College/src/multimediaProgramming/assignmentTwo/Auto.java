@@ -1,7 +1,7 @@
 /* Auto class, version 6
    Anderson, Franceschi
 */
-package multimediaProgramming.weekTwo;
+package multimediaProgramming.assignmentTwo;
 import java.text.DecimalFormat;
 
 public class Auto

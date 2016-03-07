@@ -6,7 +6,7 @@
  * Program Description: Program will display the contact information of WIT on a panel
  * */
 
-package multimediaProgramming.weekThree;
+package multimediaProgramming.assignmentThree;
 
 import java.awt.*;
 

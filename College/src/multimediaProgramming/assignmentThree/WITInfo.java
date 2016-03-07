@@ -7,7 +7,7 @@
  * */
 // imports
 
-package multimediaProgramming.weekThree;
+package multimediaProgramming.assignmentThree;
 
 import java.awt.*;
 

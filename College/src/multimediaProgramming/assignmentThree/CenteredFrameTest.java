@@ -11,7 +11,7 @@
  * */
 // import java.awt.* and Javax.swing.Frame
 
-package multimediaProgramming.weekThree;
+package multimediaProgramming.assignmentThree;
 
 import java.awt.*;
 

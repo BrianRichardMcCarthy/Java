@@ -5,7 +5,7 @@
  * Program Name: PolygonClient
  * */
  
-package multimediaProgramming.weekTwo;
+package multimediaProgramming.assignmentTwo;
  // import java libraries
 import java.awt.Color;
 import java.awt.Graphics;

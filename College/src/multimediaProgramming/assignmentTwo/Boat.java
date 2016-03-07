@@ -4,7 +4,7 @@
  * Date: 02/02/2016
  * Program Name: Boat
  * */
-package multimediaProgramming.weekTwo;
+package multimediaProgramming.assignmentTwo;
  
 // import java libraries
 import java.awt.Color;

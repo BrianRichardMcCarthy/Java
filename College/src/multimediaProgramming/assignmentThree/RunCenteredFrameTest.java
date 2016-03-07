@@ -6,7 +6,7 @@
  * Program Description: Program to run a new instance of CenteredFrameTest
  * */
 
-package multimediaProgramming.weekThree;
+package multimediaProgramming.assignmentThree;
 
 public class RunCenteredFrameTest {
 

@@ -6,7 +6,7 @@
  * Program Description: Program will display a simple frame in the top left corner of the screen
  * */
 
-package multimediaProgramming.weekThree;
+package multimediaProgramming.assignmentThree;
 
 import javax.swing.JFrame;
 

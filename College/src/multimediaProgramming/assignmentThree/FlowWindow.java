@@ -11,7 +11,7 @@
  * 						Password Field
  * */
 
-package multimediaProgramming.weekThree;
+package multimediaProgramming.assignmentThree;
 
 // imports
 import java.awt.*;
