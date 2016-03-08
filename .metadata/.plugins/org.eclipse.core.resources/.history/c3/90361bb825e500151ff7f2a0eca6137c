@@ -1,14 +1,7 @@
 /*
- * Student Name: Brian McCarthy
- * Student Number: 20063914
- * Program Name: Events
- * Program Description: Create a new class BorderWindowEvents.java 
- * 						program to display relevant JOptionPane output 
- * 						messages for the two command buttons in the Application.
- * 						Include an event listener for the JTextField component. 
- * 						Output a suitable message when the RETURN key is pressed.
- * Difference between this program and BorderWindowEvents.java is how it handles the events through anonymous class
- * */
+ * FlowWindowEvents .java
+ * Event Listeners in Java using this class to create actionlisteners
+ */
 package multimediaProgramming.assignmentFour;
 import java.awt.*;
 import java.awt.event.*;
