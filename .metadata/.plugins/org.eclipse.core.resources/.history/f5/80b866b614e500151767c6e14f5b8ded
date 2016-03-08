@@ -9,7 +9,7 @@ import java.awt.event.*;
 
 import javax.swing.*;
 
-public class FlowWindowEvents extends JFrame implements ActionListener {
+public class FlowWindowEvents extends JFrame {
 
 	// private fields Two JButtons, text field, and contentPane
 	JButton a, b;
