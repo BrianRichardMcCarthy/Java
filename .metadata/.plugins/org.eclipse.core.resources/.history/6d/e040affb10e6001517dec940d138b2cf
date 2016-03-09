@@ -1,0 +1,8 @@
+package multimediaProgramming.assignmentFour;
+
+public class TextTest
+{  public static void main(String[] args)
+   {  JFrame frame = new TextTestFrame();
+      frame.show();
+   }
+}
