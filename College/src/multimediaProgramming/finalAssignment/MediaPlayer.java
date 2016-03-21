@@ -6,6 +6,7 @@ import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -16,7 +17,7 @@ public class MediaPlayer extends JFrame {
 	private static final Dimension SCREENSIZE = KIT.getScreenSize();
 	private static final int HEIGHT = SCREENSIZE.height, WIDTH = SCREENSIZE.width;
 
-	private Button play = new Button(false, "Play"), stop = new Button(false, "Stop");
+	private Button play = new Button(true, "Play"), stop = new Button(false, "Stop");
 	private String title = "Media Player";
 	private Container pane = getContentPane();
 
@@ -33,6 +34,26 @@ public class MediaPlayer extends JFrame {
 		JPanel north = newPanel();
 		north.add(play);
 		north.add(stop);
+		play.addActionListener(new ActionListener() {
+
+			public void actionPerformed(ActionEvent arg0) {
+				if (play.getState()) {
+					play.press();
+					stop.press();
+				}
+			}
+			
+		});
+		stop.addActionListener(new ActionListener() {
+
+			public void actionPerformed(ActionEvent arg0) {
+				if (stop.getState()) {
+					stop.press();
+					play.press();
+				}
+			}
+			
+		});
 		pane.add(north, BorderLayout.NORTH);
 	}
 

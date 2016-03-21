@@ -3,12 +3,10 @@ package multimediaProgramming.assignmentFour;
 /*	Student Name: Brian McCarthy
  * 	Student Number: 20063914
  * 	Program Name: TextTestFrame
+ * 	Date: 16/03/2016
  * */
 import java.awt.BorderLayout;
 import java.awt.Container;
-import java.awt.Dimension;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;

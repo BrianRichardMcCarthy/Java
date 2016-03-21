@@ -2,6 +2,7 @@ package multimediaProgramming.assignmentFour;
 
 /*	Student Name: Brian McCarthy
  * 	Student Number: 20063914
+ * 	Date: 16/03/2016
  * 	Program Name: ClockPanel
  * */
 
