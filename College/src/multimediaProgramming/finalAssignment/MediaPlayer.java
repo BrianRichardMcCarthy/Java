@@ -11,6 +11,12 @@ import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+/**
+ * Main class for Media player assignment.
+ * <br>Extends Jframe class.
+ * @author Brian McCarthy.
+ * @version 0.2.
+ */
 public class MediaPlayer extends JFrame {
 
 	private static final Toolkit KIT = Toolkit.getDefaultToolkit();
@@ -21,15 +27,33 @@ public class MediaPlayer extends JFrame {
 	private String title = "Media Player";
 	private Container pane = getContentPane();
 
+	/**
+	 * Constructor for Media Player.
+	 * <br>Calls methods: 
+	 * <br>
+	 * <ul>
+	 * <li>addNorth().</li>
+	 * <li>set().</li>
+	 * </ul> 
+	 */
 	public MediaPlayer() {
 		addNorth();
 		set();
 	}
 
+	/**
+	 * method to get a new instance of JPanel.
+	 * @return new instance of JPanel with a layout manager of Flow layout.
+	 */
 	private JPanel newPanel() {
 		return new JPanel(new FlowLayout());
 	}
 
+	/**
+	 * addNorth() creates a new JPanel in the north region.
+	 * <br> with the play and stop button in the JPanel.
+	 * <br> adds action listener to both buttons to change the state.
+	 */
 	private void addNorth() {
 		JPanel north = newPanel();
 		north.add(play);
@@ -57,6 +81,17 @@ public class MediaPlayer extends JFrame {
 		pane.add(north, BorderLayout.NORTH);
 	}
 
+	/**
+	 * Set() calls methods:
+	 * <br> 
+	 * <ul>
+	 * <li>setTitle().</li>
+	 * <li>setDefaultCloseOperation(EXIT_ON_CLOSE).</li>
+	 * <li>setSize(WIDTH/2, HEIGHT/2).</li>
+	 * <li>setLocations(WIDTH/4, HEIGHT/4).</li>
+	 * <li>setVisible(true).</li>
+	 * </ul>
+	 */
 	private void set() {
 		setTitle(title);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -65,6 +100,10 @@ public class MediaPlayer extends JFrame {
 		setVisible(true);
 	}
 
+	/**
+	 * Main method to run by the compiler.
+	 * @param args (String[]) not used.
+	 */
 	public static void main(String[] args) {
 		new MediaPlayer();
 	}
