@@ -1,0 +1,22 @@
+import javax.swing.JFrame;
+
+/**
+ * Date: 21/03/2016
+ * Program: 2D Game Engine
+ * Program Description
+ * Youtube Video Link: 
+ * @author Brian McCarthy
+ * @version 0.0
+ *
+ */
+public class Main extends JFrame {
+
+	/**
+	 * 
+	 * @param args (String[]) not used.
+	 */
+	public static void main(String[] args) {
+		for (int x=0; x < args.length; x++)
+			System.out.println(x + ": " + args[x]);
+	}
+}

@@ -1,0 +1,19 @@
+/**
+ * Date: 21/03/2016
+ * Program: 2D Game Engine
+ * Program Description
+ * Youtube Video Link: 
+ * @author Brian McCarthy
+ * @version 0.0
+ *
+ */
+public class Main {
+
+	/**
+	 * 
+	 * @param args (String[]) not used.
+	 */
+	public static void main(String[] args) {
+		new game.Window().start();
+	}
+}

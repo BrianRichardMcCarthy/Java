@@ -1,0 +1,53 @@
+package game;
+
+import java.awt.BorderLayout;
+import java.awt.Canvas;
+import java.awt.Dimension;
+
+import javax.swing.JFrame;
+
+public class Window extends Canvas implements Runnable {
+
+	/**
+	 * @param serialVersionUID (long)<br>
+	 * @param WIDTH (int)
+	 */
+	private static final long serialVersionUID = 1L;
+	public static final int WIDTH = 160, HEIGHT = WIDTH/12*9, SCALE = 3;
+	public static final String NAME = "Game";
+	
+	private JFrame window = new JFrame(NAME);
+	private boolean running = false;
+	
+	public Window() {
+		setMinimumSize(new Dimension(WIDTH*SCALE, HEIGHT*SCALE));
+		setMaximumSize(new Dimension(WIDTH*SCALE, HEIGHT*SCALE));
+		setPreferredSize(new Dimension(WIDTH*SCALE, HEIGHT*SCALE));
+		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		window.setLayout(new BorderLayout());
+		window.add(this, BorderLayout.CENTER);
+		window.pack();
+		window.setResizable(false);
+		window.setLocationRelativeTo(null);
+		window.setVisible(true);
+	}
+
+	public synchronized void start() {
+		setRunning(true);
+		new Thread(this).start();
+	}
+	
+	public void stop() {
+		setRunning(false);
+	}
+	
+	public void setRunning(boolean running) {
+		this.running = running;
+	}
+	
+	public void run() {
+		while (running) {
+			System.out.print("Hello World");
+		}
+	}
+}

@@ -19,6 +19,16 @@ import javax.swing.JPanel;
  */
 public class MediaPlayer extends JFrame {
 
+	/**
+	 * @param KIT (Toolkit, static final).
+	 * @param SCREENSIZE (Dimension, static final).
+	 * @param HEIGHT (int, static final).
+	 * @param WIDTH (int, static final).
+	 * @param play (Button).
+	 * @param stop (Button).
+	 * @param title (String).
+	 * @param pane (Container)
+	 */
 	private static final Toolkit KIT = Toolkit.getDefaultToolkit();
 	private static final Dimension SCREENSIZE = KIT.getScreenSize();
 	private static final int HEIGHT = SCREENSIZE.height, WIDTH = SCREENSIZE.width;
