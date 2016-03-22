@@ -2,7 +2,12 @@ package game;
 
 import java.awt.BorderLayout;
 import java.awt.Canvas;
+import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.image.BufferStrategy;
+import java.awt.image.BufferedImage;
+import java.awt.image.DataBufferInt;
 
 import javax.swing.JFrame;
 
@@ -10,7 +15,7 @@ import javax.swing.JFrame;
  * Date: 21/03/2016<br>
  * Program: 2D Game Engine<br>
  * Program Description:<br>
- * Youtube Video Link:<br>
+ * Youtube Video Link: https://www.youtube.com/playlist?list=PL8CAB66181A502179<br>
  * @author Brian McCarthy
  * @version 0.0
  *
@@ -29,7 +34,10 @@ public class Window extends Canvas implements Runnable {
 	private static final int WIDTH = 160, HEIGHT = WIDTH/12*9, SCALE = 3;
 	private static final String NAME = "Game";
 	private JFrame window = new JFrame(NAME);
-	private boolean running;
+	private boolean running = false;
+	private int tickCounter = 0;
+	private BufferedImage image = new BufferedImage(WIDTH, HEIGHT, BufferedImage.TYPE_INT_RGB);
+	private int[] pixels = ((DataBufferInt) image.getRaster().getDataBuffer()).getData();
 	
 	/**
 	 * Constructor calls the following methods to set up the game window:
@@ -66,7 +74,8 @@ public class Window extends Canvas implements Runnable {
 	 * 
 	 */
 	public synchronized void start() {
-		setRunning(true);
+		// setRunning(true);
+		running = true;
 		new Thread(this).start();
 	}
 	
@@ -79,10 +88,10 @@ public class Window extends Canvas implements Runnable {
 	
 	/**
 	 * 
-	 * @param running local variable to method setRunning. Will be assigned to class variable running
+	 * @param temp local variable to method setRunning. Will be assigned to class variable running
 	 */
-	public void setRunning(boolean running) {
-		this.running = running;
+	public void setRunning(boolean temp) {
+		this.running = temp;
 	}
 	
 	/**
@@ -96,9 +105,65 @@ public class Window extends Canvas implements Runnable {
 	/**
 	 * 
 	 */
+	public void tick() {
+		tickCounter++;
+		for (int i = 0; i < pixels.length; i++) {
+			pixels[i] = i + tickCounter;
+		}
+	}
+	
+	/**
+	 * 
+	 */
+	public void render() {
+		BufferStrategy bs = getBufferStrategy();
+		if (bs == null) {
+			createBufferStrategy(3);
+			return;
+		}
+		
+		Graphics g = bs.getDrawGraphics();
+		g.drawImage(image, 0, 0, getWidth(), getHeight(), null);
+		g.dispose();
+		bs.show();
+	}
+	
+	/**
+	 * 
+	 */
 	public void run() {
+		long lastTime = System.nanoTime(), lastTimer = System.currentTimeMillis();
+		double nsPerTick = 1000000000D/60D, delta = 0;
+		int ticks = 0, frames = 0;
+		
 		while(running) {
-			System.out.print("Hello World");
+			long now = System.nanoTime();
+			delta += (now - lastTime)/nsPerTick;
+			lastTime = now;
+			boolean render = false;
+			while (delta >= 1) {
+				ticks++;
+				tick();
+				delta -= 1;
+				render = true;
+			}
+			
+			try {
+				Thread.sleep(2);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			
+			if (render) {
+				frames++;
+				render();
+			}
+			
+			if (System.currentTimeMillis() - lastTimer >= 1000) {
+				lastTimer += 1000;
+				frames = 0;
+				ticks = 0;
+			}
 		}
 	}
 }
