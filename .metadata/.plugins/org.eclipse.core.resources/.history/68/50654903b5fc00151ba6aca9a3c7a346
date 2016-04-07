@@ -1,9 +1,5 @@
 package multimediaProgramming.assignmentFive;
 
-/*
- * Reference: http://www.tutorialspoint.com/java/java_multithreading.htm
- * */
-
 public class DisplayMessage implements Runnable{
 	
 	private String message;

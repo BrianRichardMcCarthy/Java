@@ -5,7 +5,6 @@ INDEX VERSION 1.127+C:\Users\Brian\Desktop\Projects\Java\.metadata\.plugins\org.
 1492968368.index
 249459504.index
 2164123280.index
-2678085632.index
 1269277382.index
 52205867.index
 2585328351.index

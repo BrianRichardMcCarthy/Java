@@ -1,5 +1,9 @@
 package multimediaProgramming.assignmentFive;
 
+/*
+ * Reference: http://www.tutorialspoint.com/java/java_multithreading.htm
+ * */
+
 public class RunnableDemo implements Runnable {
 
 	private Thread t;

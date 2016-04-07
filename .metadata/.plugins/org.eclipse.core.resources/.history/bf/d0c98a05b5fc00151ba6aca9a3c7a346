@@ -1,9 +1,5 @@
 package multimediaProgramming.assignmentFive;
 
-/*
- * Reference: http://www.tutorialspoint.com/java/java_multithreading.htm
- * */
-
 public class ThreadDemo extends Thread {
 	private Thread t;
 	private String name;

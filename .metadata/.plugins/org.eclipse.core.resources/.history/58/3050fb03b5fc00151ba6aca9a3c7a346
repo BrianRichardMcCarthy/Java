@@ -1,9 +1,5 @@
 package multimediaProgramming.assignmentFive;
 
-/*
- * Reference: http://www.tutorialspoint.com/java/java_multithreading.htm
- * */
-
 public class GuessANumber extends Thread {
 	
 	private int number;
