@@ -1,0 +1,37 @@
+/**
+ * @author Brian McCarthy
+ * @version 1.0
+ * Program Description Creates a thread that every one second prints a random number between 2 - 12
+ */
+
+package multimediaProgramming.assignmentFive;
+
+import java.util.Random;
+
+public class Assignment implements Runnable {
+
+	
+	private Thread runner;
+	private Random rand = new Random();
+
+	private Assignment(String name) {
+		runner = new Thread(this, name);
+		runner.start();
+	}
+
+	public void run() {
+		for (int x = 0; x < 20; x++) {
+			int num = rand.nextInt(11) + 2;
+			System.out.println("Number: " + num);
+			try {
+				runner.sleep(1000);
+			} catch (Exception e) {
+			}
+		}
+	}
+
+	public static void main(String[] args) {
+		new Assignment("Random Number Thread");
+	}
+
+}

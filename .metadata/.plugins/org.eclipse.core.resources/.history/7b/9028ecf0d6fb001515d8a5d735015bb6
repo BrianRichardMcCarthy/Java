@@ -1,0 +1,9 @@
+package multimediaProgramming.assignmentFive;
+
+public class RunnableDemo implements Runnable {
+
+	public void run() {
+		
+	}
+
+}

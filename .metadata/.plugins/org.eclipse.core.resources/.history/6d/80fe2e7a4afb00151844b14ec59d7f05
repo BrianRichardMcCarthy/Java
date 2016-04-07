@@ -1,0 +1,21 @@
+package Casting;
+
+public class ClassCasting {
+
+	public static void main(String[] args) {
+		
+		Person p1 = new Person();
+
+	}
+
+}
+
+
+class Person {
+	public void speak() { System.out.print("Hello Citizien"); }
+}
+
+class Enemy extends Person {
+	public void speak() { System.out.print("Hand your wallet"); }
+	public void surrender() { System.out.print("I Yield"); }
+}

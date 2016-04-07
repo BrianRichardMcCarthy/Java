@@ -1,0 +1,19 @@
+package Casting;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		float fValue = 32.5f;
+		int iValue = (int) fValue;
+		
+		// prints 32
+		System.out.println("Number Casting: " + iValue);
+	
+		iValue = Math.round(fValue);
+		
+		// prints 33
+		System.out.println("Math rounding: " + iValue);
+	}
+
+}

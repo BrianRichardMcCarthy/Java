@@ -1,0 +1,27 @@
+package multimediaProgramming.assignmentFive;
+
+import java.util.Random;
+
+public class Main implements Runnable {
+
+	private Thread runner;
+	private Random rand = new Random();
+
+	private Main(String name) {
+		runner = new Thread(this, name);
+		runner.start();
+	}
+	
+	public void run() {
+		while(true) {			
+			System.out.println("Number: " + rand.nextInt(12));
+		}
+	}
+	
+	public static void main(String[] args) {
+		Main test = new Main("Random Number Thread");
+		Thread.currentThread().sleep(1);
+	}
+
+
+}

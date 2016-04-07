@@ -1,0 +1,10 @@
+package multimediaProgramming.assignmentFive;
+
+public class GuessANumber extends Thread {
+	
+	private int number;
+	public GuessANumber(int number) {
+		this.number = number;
+	}
+	
+}

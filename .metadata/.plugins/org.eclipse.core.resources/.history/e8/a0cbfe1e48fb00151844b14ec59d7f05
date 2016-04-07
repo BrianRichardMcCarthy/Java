@@ -1,0 +1,16 @@
+package Casting;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		float dValue = 32.5f;
+		int iValue = (int) dValue;
+		
+		// prints 32
+		System.out.println("Number Casting: " + iValue);
+	
+		iValue = Math.round(dValue);
+	}
+
+}

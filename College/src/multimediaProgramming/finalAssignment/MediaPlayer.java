@@ -3,11 +3,12 @@ package multimediaProgramming.finalAssignment;
 import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.Dimension;
-import java.awt.FlowLayout;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.ButtonGroup;
+import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -36,6 +37,8 @@ public class MediaPlayer extends JFrame {
 	private Button play = new Button(true, "Play"), stop = new Button(false, "Stop");
 	private String title = "Media Player";
 	private Container pane = getContentPane();
+	private ButtonGroup group = new ButtonGroup();
+	private JCheckBox all = new JCheckBox("All"), rock = new JCheckBox("Rock"), metal = new JCheckBox("Metal");
 
 	/**
 	 * Constructor for Media Player.
@@ -48,15 +51,8 @@ public class MediaPlayer extends JFrame {
 	 */
 	public MediaPlayer() {
 		addNorth();
+		addWest();
 		set();
-	}
-
-	/**
-	 * method to get a new instance of JPanel.
-	 * @return new instance of JPanel with a layout manager of Flow layout.
-	 */
-	private JPanel newPanel() {
-		return new JPanel(new FlowLayout());
 	}
 
 	/**
@@ -65,32 +61,51 @@ public class MediaPlayer extends JFrame {
 	 * <br> adds action listener to both buttons to change the state.
 	 */
 	private void addNorth() {
-		JPanel north = newPanel();
-		north.add(play);
-		north.add(stop);
-		play.addActionListener(new ActionListener() {
-
-			public void actionPerformed(ActionEvent arg0) {
-				if (play.getState()) {
-					play.press();
-					stop.press();
+		try {
+			JPanel north = new JPanel();
+			north.add(play);
+			north.add(stop);
+			play.addActionListener(new ActionListener() {
+				
+				public void actionPerformed(ActionEvent arg0) {
+					if (play.getState()) {
+						play.press();
+						stop.press();
+					}
 				}
-			}
-			
-		});
-		stop.addActionListener(new ActionListener() {
-
-			public void actionPerformed(ActionEvent arg0) {
-				if (stop.getState()) {
-					stop.press();
-					play.press();
+				
+			});
+			stop.addActionListener(new ActionListener() {
+				
+				public void actionPerformed(ActionEvent arg0) {
+					if (stop.getState()) {
+						stop.press();
+						play.press();
+					}
 				}
-			}
-			
-		});
-		pane.add(north, BorderLayout.NORTH);
+				
+			});
+			pane.add(north, BorderLayout.NORTH);
+		} catch (Exception e) {
+			System.out.println("Found 1");
+		}
 	}
 
+	private void addWest() {
+			Panel west = new Panel("Choose Genre", 20, 20);
+			group.add(metal);
+			group.add(rock);
+			group.add(all);
+			west.setText("Choose Genre");
+			west.addToPanel(metal);
+			west.addToPanel(rock);
+			west.addToPanel(all);
+			// west.add(metal);
+			// west.add(rock);
+			// west.add(all);
+			pane.add(west, BorderLayout.WEST);
+	}
+	
 	/**
 	 * Set() calls methods:
 	 * <br> 

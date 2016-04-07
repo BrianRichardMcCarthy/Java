@@ -1,0 +1,16 @@
+package multimediaProgramming.assignmentFive;
+
+public class RunnableDemo implements Runnable {
+
+	private Thread t;
+	private String name;
+	
+	public RunnableDemo(String name) {
+		name = name
+	}
+	
+	public void run() {
+		
+	}
+
+}

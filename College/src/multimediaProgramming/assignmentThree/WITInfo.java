@@ -36,6 +36,9 @@ public class WITInfo extends JFrame {
 		// set icon
 		setIconImage(panel.getLogo());
 		
+		// set default close operation
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		
 		// set visible
 		setVisible(true);
 		

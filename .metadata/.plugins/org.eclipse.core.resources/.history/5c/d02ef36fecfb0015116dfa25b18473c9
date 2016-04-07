@@ -1,0 +1,9 @@
+package multimediaProgramming.assignmentFive;
+
+public class ThreadClassDemo {
+	
+	public static void main(String[] args) {
+		Runnable hello = new Runnable("Hello");
+	}
+	
+}

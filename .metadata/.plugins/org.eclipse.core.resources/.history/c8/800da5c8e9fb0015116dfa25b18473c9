@@ -1,0 +1,10 @@
+package multimediaProgramming.assignmentFive;
+
+public class ThreadDemo extends Thread {
+	private Thread t;
+	private String name;
+	
+	public ThreadDemo(String name) {
+		this.name = name;
+	}
+}
