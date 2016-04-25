@@ -1,0 +1,21 @@
+package multimediaProgramming.finalAssignment;
+
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+public class MediaPlayer extends JFrame {
+	
+	private static String dir = "src/multimediaProgramming/finalAssignment/flags";
+	private ImageIcon flag = new ImageIcon(this.getClass().getResource(dir + "denmark.gif"));
+	private JLabel labelImage = new JLabel(flag);
+
+	public MediaPlayer() {
+		
+	}
+	
+	public static void main(String[] args) {
+		new MediaPlayer();
+	}
+
+}

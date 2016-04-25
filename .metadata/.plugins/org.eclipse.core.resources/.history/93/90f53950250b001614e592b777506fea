@@ -1,0 +1,19 @@
+package multimediaProgramming.finalAssignment;
+
+import java.awt.Image;
+
+import javax.swing.JFrame;
+
+public class MediaPlayer extends JFrame {
+	
+	private Image flag;
+
+	public MediaPlayer() {
+		
+	}
+	
+	public static void main(String[] args) {
+		new MediaPlayer();
+	}
+
+}

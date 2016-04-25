@@ -1,136 +1,103 @@
 package multimediaProgramming.finalAssignment;
 
+import java.applet.AudioClip;
 import java.awt.BorderLayout;
-import java.awt.Container;
-import java.awt.Dimension;
-import java.awt.Toolkit;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 
-import javax.swing.ButtonGroup;
-import javax.swing.JCheckBox;
+import javax.swing.ImageIcon;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
+import javax.swing.JLabel;
 
-/**
- * Main class for Media player assignment.
- * <br>Extends Jframe class.
- * @author Brian McCarthy.
- * @version 0.2.
- */
-public class MediaPlayer extends JFrame {
+public class MediaPlayer extends JFrame implements WindowListener, ItemListener {
+	
+	private String 
+							dir = "src\\multimediaProgramming\\finalAssignment\\", 
+							slashFlag = "flags\\", 
+							slashAudio = "anthems\\",
+							currentAnthem = "Denmark.wav",
+							currentFlag = "denmark.gif",
+							selected;
+							;
+	private ImageIcon flag = new ImageIcon(dir + slashFlag + currentFlag);
+	// Applet.newAudioClip(dir + slashAudio + currentAnthem)
+	private AudioClip audio;
+	private JLabel labelImage = new JLabel(flag);
+	private JComboBox country = new JComboBox();
 
-	/**
-	 * @param KIT (Toolkit, static final).
-	 * @param SCREENSIZE (Dimension, static final).
-	 * @param HEIGHT (int, static final).
-	 * @param WIDTH (int, static final).
-	 * @param play (Button).
-	 * @param stop (Button).
-	 * @param title (String).
-	 * @param pane (Container)
-	 */
-	private static final Toolkit KIT = Toolkit.getDefaultToolkit();
-	private static final Dimension SCREENSIZE = KIT.getScreenSize();
-	private static final int HEIGHT = SCREENSIZE.height, WIDTH = SCREENSIZE.width;
-
-	private Button play = new Button(true, "Play"), stop = new Button(false, "Stop");
-	private String title = "Media Player";
-	private Container pane = getContentPane();
-	private ButtonGroup group = new ButtonGroup();
-	private JCheckBox all = new JCheckBox("All"), rock = new JCheckBox("Rock"), metal = new JCheckBox("Metal");
-
-	/**
-	 * Constructor for Media Player.
-	 * <br>Calls methods: 
-	 * <br>
-	 * <ul>
-	 * <li>addNorth().</li>
-	 * <li>set().</li>
-	 * </ul> 
-	 */
-	public MediaPlayer() {
-		addNorth();
-		addWest();
-		set();
-	}
-
-	/**
-	 * addNorth() creates a new JPanel in the north region.
-	 * <br> with the play and stop button in the JPanel.
-	 * <br> adds action listener to both buttons to change the state.
-	 */
-	private void addNorth() {
-		try {
-			JPanel north = new JPanel();
-			north.add(play);
-			north.add(stop);
-			play.addActionListener(new ActionListener() {
-				
-				public void actionPerformed(ActionEvent arg0) {
-					if (play.getState()) {
-						play.press();
-						stop.press();
-					}
-				}
-				
-			});
-			stop.addActionListener(new ActionListener() {
-				
-				public void actionPerformed(ActionEvent arg0) {
-					if (stop.getState()) {
-						stop.press();
-						play.press();
-					}
-				}
-				
-			});
-			pane.add(north, BorderLayout.NORTH);
-		} catch (Exception e) {
-			System.out.println("Found 1");
-		}
-	}
-
-	private void addWest() {
-			Panel west = new Panel("Choose Genre", 20, 20);
-			group.add(metal);
-			group.add(rock);
-			group.add(all);
-			west.setText("Choose Genre");
-			west.addToPanel(metal);
-			west.addToPanel(rock);
-			west.addToPanel(all);
-			// west.add(metal);
-			// west.add(rock);
-			// west.add(all);
-			pane.add(west, BorderLayout.WEST);
+	public String toString() {
+		return dir + slashFlag + currentFlag;
 	}
 	
-	/**
-	 * Set() calls methods:
-	 * <br> 
-	 * <ul>
-	 * <li>setTitle().</li>
-	 * <li>setDefaultCloseOperation(EXIT_ON_CLOSE).</li>
-	 * <li>setSize(WIDTH/2, HEIGHT/2).</li>
-	 * <li>setLocations(WIDTH/4, HEIGHT/4).</li>
-	 * <li>setVisible(true).</li>
-	 * </ul>
-	 */
-	private void set() {
-		setTitle(title);
+	public MediaPlayer() {
+		addDropDown();
+		add(labelImage, BorderLayout.EAST);
+		add(country, BorderLayout.NORTH);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		setSize(WIDTH / 2, HEIGHT / 2);
-		setLocation(WIDTH / 4, HEIGHT / 4);
+		pack();
 		setVisible(true);
 	}
+	
+	private void addDropDown() {
+		 country.addItem("United States of America");
+		 country.addItem("United Kingdom");
+		 country.addItem("Denmark");
+		 country.addItem("Norway");
+		 country.addItem("China");
+		 country.addItem("India");
+		 country.addItem("Germany");
+		 country.addItemListener(this);
+	}
+	
+	public void windowActivated(WindowEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
 
-	/**
-	 * Main method to run by the compiler.
-	 * @param args (String[]) not used.
-	 */
+	public void windowClosed(WindowEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void windowClosing(WindowEvent arg0) {
+		// TODO Auto-generated method stub
+		audio.stop();
+	}
+
+	public void windowDeactivated(WindowEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void windowDeiconified(WindowEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void windowIconified(WindowEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void windowOpened(WindowEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void itemStateChanged(ItemEvent arg0) {
+		// TODO Auto-generated method stub
+		selected = (String)country.getSelectedItem();
+	}
+
 	public static void main(String[] args) {
-		new MediaPlayer();
+		try {
+			new MediaPlayer();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 }

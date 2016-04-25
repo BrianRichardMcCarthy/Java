@@ -31,10 +31,10 @@ public class WITInfo extends JFrame {
 		setLocation(screen.width / 4, screen.height / 4);
 		
 		// set title
-		setTitle("Waterford Institute of Technology");
+		// setTitle("Waterford Institute of Technology");
 		
 		// set icon
-		setIconImage(panel.getLogo());
+		// setIconImage(panel.getLogo());
 		
 		// set default close operation
 		setDefaultCloseOperation(EXIT_ON_CLOSE);

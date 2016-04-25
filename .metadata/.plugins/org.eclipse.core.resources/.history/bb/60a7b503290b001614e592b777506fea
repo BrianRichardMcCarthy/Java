@@ -1,0 +1,83 @@
+package multimediaProgramming.finalAssignment;
+
+import java.applet.Applet;
+import java.applet.AudioClip;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
+import java.net.URL;
+
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+public class MediaPlayer extends JFrame implements WindowListener {
+	
+	private static String 
+							dir = "src/multimediaProgramming/finalAssignment", 
+							slashFlag = "/flags", 
+							slashAudio = "/anthems",
+							anthem = "norway.wav"
+							;
+	private URL urlFlags = getClass().getResource(dir + slashFlag + anthem);
+	// private ImageIcon flag = new ImageIcon(urlFlags);
+//	private URL url = getClass().getResource(dir + slashAudio + anthem);
+	// private AudioClip audio = Applet.newAudioClip(url);
+	// private JLabel labelImage = new JLabel(flag);
+
+	public String toString() {
+		
+	}
+	
+	public MediaPlayer() {
+		// add(labelImage);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setVisible(true);
+	}
+	
+	public static void main(String[] args) {
+		new MediaPlayer();
+	}
+
+	@Override
+	public void windowActivated(WindowEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void windowClosed(WindowEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void windowClosing(WindowEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void windowDeactivated(WindowEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void windowDeiconified(WindowEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void windowIconified(WindowEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void windowOpened(WindowEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

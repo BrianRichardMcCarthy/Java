@@ -1,0 +1,10 @@
+package multimediaProgramming.finalAssignment;
+
+public class MediaPlayer {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

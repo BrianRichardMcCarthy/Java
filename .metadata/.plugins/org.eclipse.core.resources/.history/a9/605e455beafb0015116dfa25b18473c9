@@ -1,8 +1,0 @@
-package multimediaProgramming.assignmentFive;
-
-public class DisplayMessage {
-	private String message;
-	public DisplayMessage(String message) {
-		this.message = message;
-	}
-}

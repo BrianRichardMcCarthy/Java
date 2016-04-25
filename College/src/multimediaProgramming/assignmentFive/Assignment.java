@@ -1,7 +1,9 @@
 /**
  * @author Brian McCarthy
  * @version 1.0
- * Program Description Creates a thread that every one second prints a random number between 2 - 12
+ * Student Number: 20063914
+ * Date: 13/04/2016
+ * Program Description Creates a thread that every one second prints a random number between 2 - 12 for 12 seconds
  */
 
 package multimediaProgramming.assignmentFive;

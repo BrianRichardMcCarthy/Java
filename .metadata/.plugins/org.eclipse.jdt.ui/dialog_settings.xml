@@ -43,6 +43,12 @@
 		<item value="1" key="VisibilityModifier"/>
 		<item value="false" key="FinalModifier"/>
 	</section>
+	<section name="org.eclipse.jdt.internal.ui.typehierarchy.QuickHierarchy">
+		<item value="true" key="org.eclipse.jdt.internal.ui.typehierarchy.HierarchyInformationControlDIALOG_USE_PERSISTED_SIZE"/>
+		<item value="320" key="org.eclipse.jdt.internal.ui.typehierarchy.HierarchyInformationControlDIALOG_HEIGHT"/>
+		<item value="400" key="org.eclipse.jdt.internal.ui.typehierarchy.HierarchyInformationControlDIALOG_WIDTH"/>
+		<item value="false" key="org.eclipse.jdt.internal.ui.typehierarchy.HierarchyInformationControlDIALOG_USE_PERSISTED_LOCATION"/>
+	</section>
 	<section name="DialogBounds_GetterSetterTreeSelectionDialog">
 		<item value="528" key="DIALOG_WIDTH"/>
 		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
@@ -57,6 +63,13 @@
 		<item value="433" key="DIALOG_X_ORIGIN"/>
 		<item value="8" key="DIALOG_Y_ORIGIN"/>
 	</section>
+	<section name="org.eclipse.jdt.internal.ui.text.QuickOutline">
+		<item value="true" key="org.eclipse.jdt.internal.ui.text.JavaOutlineInformationControlDIALOG_USE_PERSISTED_SIZE"/>
+		<item value="400" key="org.eclipse.jdt.internal.ui.text.JavaOutlineInformationControlDIALOG_WIDTH"/>
+		<item value="320" key="org.eclipse.jdt.internal.ui.text.JavaOutlineInformationControlDIALOG_HEIGHT"/>
+		<item value="false" key="GoIntoTopLevelTypeAction.isChecked"/>
+		<item value="false" key="org.eclipse.jdt.internal.ui.text.JavaOutlineInformationControlDIALOG_USE_PERSISTED_LOCATION"/>
+	</section>
 	<section name="RefactoringWizard.preview">
 		<item value="600" key="width"/>
 		<item value="400" key="height"/>
@@ -64,7 +77,7 @@
 	<section name="javadoc">
 		<item value="public" key="access"/>
 		<item value="false" key="noindex"/>
-		<item value="C:\Users\Brian\Desktop\Projects\Java\Game\javadoc.xml" key="antpath"/>
+		<item value="C:\Users\Brian\Desktop\Projects\Java\College\javadoc.xml" key="antpath"/>
 		<item value="false" key="nodeprecatedlist"/>
 		<item value="true" key="use"/>
 		<item value="true" key="author"/>
@@ -78,7 +91,7 @@
 		<item value="true" key="splitindex"/>
 		<item value="true" key="fromStandard"/>
 		<item value="false" key="notree"/>
-		<item value="C:\Users\Brian\Desktop\Projects\Java\doc" key="destdir"/>
+		<item value="C:\Users\Brian\Desktop\Projects\Java\College\doc" key="destdir"/>
 		<item value="false" key="openinbrowser"/>
 		<section name="projects">
 			<section name="Game">
@@ -86,9 +99,19 @@
 				<item value="C:\Users\Brian\Desktop\Projects\Java\Game\doc" key="destdir"/>
 				<item value="" key="href"/>
 			</section>
+			<section name="Revision">
+				<item value="C:\Users\Brian\Desktop\Projects\Java\Revision\javadoc.xml" key="antpath"/>
+				<item value="C:\Users\Brian\Desktop\Projects\Java\Revision\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
 			<section name="College">
 				<item value="C:\Users\Brian\Desktop\Projects\Java\College\javadoc.xml" key="antpath"/>
 				<item value="C:\Users\Brian\Desktop\Projects\Java\College\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="Image">
+				<item value="C:\Users\Brian\Desktop\college\elearning\Code\javadoc.xml" key="antpath"/>
+				<item value="C:\Users\Brian\Desktop\college\elearning\Code\doc" key="destdir"/>
 				<item value="" key="href"/>
 			</section>
 			<section name="RemoteSystemsTempFiles">

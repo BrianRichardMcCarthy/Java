@@ -1,0 +1,36 @@
+import java.awt.Graphics;
+import java.awt.Image;
+
+import javax.swing.JPanel;
+
+/**
+ * 
+ * @author Brian
+ * @version 1.0
+ */
+
+public class Info extends JPanel {
+	// String array of the information to be printed to the screeen
+	private static String[] details = { "Waterford Institute of Technology,", "Main Campus,", "Cork Road,",
+			"Waterford City,", "Co. Waterford, Ireland.", "phone: +353 51 30 2000", "www.wit.ie" };
+	
+	// variable for the image
+	private static Image witLogo = Window.kit.getImage("src/images/Logo.jpg");
+	
+	public void paintComponent(Graphics g) {
+		// method to draw image and text to the screen
+		super.paintComponent(g);
+		
+		// draw the image
+		g.drawImage(witLogo, 100, 100, null);
+		
+		int y = 120;
+		
+		for (int x = 0; x < details.length; x++) {
+			// draw the text and space it out
+			g.drawString(details[x], 250, y);
+			y += 20;
+		}
+	}
+
+}

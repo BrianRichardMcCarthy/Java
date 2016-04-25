@@ -1,0 +1,26 @@
+package multimediaProgramming.finalAssignment;
+
+import java.applet.Applet;
+import java.applet.AudioClip;
+
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+public class MediaPlayer extends JFrame {
+	
+	private static String dir = "src/multimediaProgramming/finalAssignment", slashFlag = "/flags", slashAudio = "/anthems";
+	private ImageIcon flag = new ImageIcon(this.getClass().getResource(dir + "denmark.gif"));
+	private JLabel labelImage = new JLabel(flag);
+	private URL url = this.getClass().getResource("");
+	private AudioClip audio = Applet.newAudioClip(url);
+
+	public MediaPlayer() {
+		
+	}
+	
+	public static void main(String[] args) {
+		new MediaPlayer();
+	}
+
+}
