@@ -1,0 +1,17 @@
+/*
+ * main.cpp
+ *
+ *  Created on: 29 Apr 2016
+ *      Author: Brian
+ */
+
+#include "main.h"
+
+
+int main(void) {
+	print();
+}
+
+void print() {
+	std::cout << "" << std::endl;
+}

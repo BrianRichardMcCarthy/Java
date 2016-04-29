@@ -4,3 +4,13 @@ g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp"
 g++ -o Udemy.exe main.o 
 Info: Nothing to build for Udemy
 Info: Nothing to build for Udemy
+14:53:14 **** Rebuild of configuration Debug for project StringTest ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -o StringTest.exe main.o 
+Info: Nothing to build for StringTest
+15:00:55 **** Incremental Build of configuration Debug for project StringTest ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -o StringTest.exe main.o 
+Info: Nothing to build for StringTest
