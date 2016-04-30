@@ -30,7 +30,7 @@ public class MediaPlayer extends JFrame implements WindowListener, ItemListener 
 	private AudioClip audio;
 	private JLabel labelImage = new JLabel(flag);
 	private JComboBox country = new JComboBox();
-	private JButton button = new JButton("Play");
+	private JButton button = new JButton();
 	private boolean isPlaying = false;
 	private URL urlAudio;
 
@@ -39,18 +39,20 @@ public class MediaPlayer extends JFrame implements WindowListener, ItemListener 
 	}
 
 	public MediaPlayer() {
-
+		setAudio();
+		if (!isPlaying)
+			button.setText("Play");
 		button.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent arg0) {
 				if (isPlaying) {
 					audio.stop();
 					isPlaying = false;
-					button.setText("Pause");
+					button.setText("Play");
 				} else {
 					audio.play();
 					isPlaying = true;
-					button.setText("Play");
+					button.setText("Pause");
 				}
 			}
 
@@ -67,14 +69,18 @@ public class MediaPlayer extends JFrame implements WindowListener, ItemListener 
 
 	}
 
-	private void audio() {
+	private void setAudio() {
+		changeAudio();
+	}
+
+	private void changeAudio() {
 		try {
 			urlAudio = MediaPlayer.class.getResource(slashAudio + currentAnthem);
 			audio = Applet.newAudioClip(urlAudio);
 		} catch (Exception e) {
 		}
 	}
-
+	
 	private void addDropDown() {
 		country.addItem("USA");
 		country.addItem("UK");
@@ -123,15 +129,16 @@ public class MediaPlayer extends JFrame implements WindowListener, ItemListener 
 
 	public void itemStateChanged(ItemEvent arg0) {
 		// TODO Auto-generated method stub
+		audio.stop();
 		String[] fileType = { ".jpg", ".wav" };
 		selected = (String) country.getSelectedItem();
-		currentAnthem = dir + slashAudio + selected + fileType[1];
+		currentAnthem = selected + fileType[1];
 		currentFlag = dir + slashFlag + selected + fileType[0];
-		System.out.println(currentFlag);
 		flag.getImage().flush();
 		flag.setImage(new ImageIcon(currentFlag).getImage());
 		labelImage.imageUpdate(flag.getImage(), 0, 0, 100, 100, 100);
 		labelImage.repaint();
+		setAudio();
 	}
 
 	public static void main(String[] args) {
