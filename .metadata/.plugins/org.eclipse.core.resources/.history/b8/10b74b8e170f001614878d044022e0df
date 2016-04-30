@@ -1,0 +1,88 @@
+/**
+ * @author Brian McCarthy
+ * Date: 30/04/2016
+ * Class Name: ResourceLocator
+ * Class Description: This class loads in the images to be displayed 
+ * 					  and the anthems to be played.
+ */
+
+package multimediaProgramming.finalAssignment;
+
+//import
+import java.applet.Applet;
+import java.applet.AudioClip;
+import java.awt.Image;
+import java.net.URL;
+
+import javax.swing.ImageIcon;
+
+public class ResourceLocator {
+	
+	/**
+	 * ResourceLocator variables
+	 * @param urlAudio (URL)
+	 * @param audio (AudioClip)
+	 * @param info (Array of Strings)
+	 * @param selected (String) (Name of Country, no file location or file type)
+	 * @param currentAnthem (String) ("anthems\" + selected + ".wav")
+	 */
+	private URL urlAudio;
+	private AudioClip audio;
+	private String[] info = { "src\\multimediaProgramming\\finalAssignment\\", "flags\\", "anthems\\", "Denmark.wav",
+			"Denmark.jpg", "Denmark", ".jpg", ".wav" };
+	private String selected = info[5];
+	private String currentAnthem = info[2] + selected + info[7];
+	//
+
+	/**
+	 * Accessor for default Image. Use getImage(String flag) to change image
+	 * @return image located: src\multimediaProgramming\finalAssignment\flags\Denmark.jpg
+	 */
+	public Image getImage() {
+		return new ImageIcon(info[0] + info[1] + info[4]).getImage();
+	}
+
+	/**
+	 * Accessor for selected Country. Used to change current flag.
+	 * @param flag (String) (chosen country)
+	 * @return image located: src\multimediaProgramming\finalAssignment\flags\(flag parameter).jpg
+	 */
+	private Image getImage(String flag) {
+		return new ImageIcon(info[0] + info[1] + flag + info[6]).getImage();
+	}
+
+	/**
+	 * Mutator for the selected variable
+	 * @param selected (String) (assigned to selected instance variable)
+	 */
+	public void setSelected(String selected) {
+		this.selected = selected;
+	}
+	
+	/**
+	 * Returns the countries anthem
+	 * @return audio (AudioClip)
+	 */
+	public AudioClip changeAudio() {
+		// String of the location + anthem name + anthem extension
+		currentAnthem = info[2] + selected + info[7];
+		
+		// url for the clip
+		urlAudio = this.getClass().getResource(currentAnthem);
+		
+		// over rides the previous clip in audio
+		audio = Applet.newAudioClip(urlAudio);
+		
+		// returns audio
+		return audio;
+	}
+	
+	/**
+	 * Change the image and passes it to DisplayImagePlayAudio class, Which passes it to ImagePanel to draw the image.
+	 * @return A different countries' flag
+	 */
+	public Image changeImage() {
+		String currentFlag = selected;
+		return getImage(currentFlag);
+	}
+}

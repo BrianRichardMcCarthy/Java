@@ -1,0 +1,70 @@
+/**
+ * @author Brian McCarthy
+ * Date: 30/04/2016
+ * Class Name: ResourceLocator
+ * Class Description: This class loads in the images to be displayed 
+ * 					  and the anthems to be played.
+ */
+
+package multimediaProgramming.finalAssignment;
+
+/**
+ * Using the Applet, AudioClip, Image, Url libraries
+ */
+import java.applet.Applet;
+import java.applet.AudioClip;
+import java.awt.Image;
+import java.net.URL;
+
+import javax.swing.ImageIcon;
+
+public class ResourceLocator {
+	
+	/**
+	 * ResourceLocator variables
+	 * @param urlAudio (URL)
+	 * @param audio (AudioClip)
+	 * @param info (Array of Strings)
+	 * @param selected (String) (Name of Country, no file location or file type)
+	 * @param currentAnthem (String) ("anthems\" + selected + ".wav")
+	 */
+	private URL urlAudio;
+	private AudioClip audio;
+	private String[] info = { "src\\multimediaProgramming\\finalAssignment\\", "flags\\", "anthems\\", "Denmark.wav",
+			"Denmark.jpg", "Denmark", ".jpg", ".wav" };
+	private String selected = info[5];
+	private String currentAnthem = info[2] + selected + info[7];
+	//
+
+	public Image getImage() {
+		return new ImageIcon(info[0] + info[1] + info[4]).getImage();
+	}
+
+	public Image getImage(String flag) {
+		return new ImageIcon(info[0] + info[1] + flag + info[6]).getImage();
+	}
+
+	public void setSelected(String selected) {
+		this.selected = selected;
+	}
+	
+	public AudioClip changeAudio() {
+		currentAnthem = info[2] + selected + info[7];
+		urlAudio = this.getClass().getResource(currentAnthem);
+		audio = Applet.newAudioClip(urlAudio);
+		return audio;
+	}
+
+	public String toString() {
+		return urlAudio.toString();
+	}
+	
+	public String getURL() {
+		return (String) info[2] + selected + info[7];
+	}
+	
+	public Image changeImage() {
+		String currentFlag = selected;
+		return getImage(currentFlag);
+	}
+}

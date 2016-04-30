@@ -1,0 +1,38 @@
+/**
+ * @author Brian McCarthy
+ * Date: 30/04/2016
+ * Class Name: ImagePanel
+ * Class Description: This class extends JPanel. Draws an image to the JFrame.
+ */
+package multimediaProgramming.finalAssignment;
+
+import java.awt.*;
+import javax.swing.*;
+
+public class ImagePanel extends JPanel {
+	
+	/**
+	 * @param filename (String) (Name of the countries flag to be displayed)
+	 */
+	private String filename;
+	private Image image = null;
+
+	public ImagePanel() {
+	}
+
+	public ImagePanel(Image image) {
+		this.image = image;
+	}
+	
+	public void showImage(Image image) {
+		this.image = image;
+		repaint();
+	}
+
+	public void paintComponent(Graphics g) {
+		super.paintComponent(g);
+
+		if (image != null)
+			g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
+	}
+}

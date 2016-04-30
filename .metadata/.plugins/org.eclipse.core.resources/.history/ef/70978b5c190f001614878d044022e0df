@@ -1,0 +1,171 @@
+/**
+ * @author Brian McCarthy
+ * Date: 30/04/2016
+ * Class Name: DisplayImagePlayAudio
+ * Class Description: 	This class extends JFrame, 
+ * 						And implements WindowListener, 
+ * 						ItemListener, ActionListener.
+ * 						Allows the user to choose a country 
+ * 						to play its' anthem and show its' flag.
+ */
+
+package multimediaProgramming.finalAssignment;
+
+// imports
+import java.applet.AudioClip;
+import java.awt.BorderLayout;
+import java.awt.Container;
+import java.awt.Dimension;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
+
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+
+public class DisplayImagePlayAudio extends JFrame implements WindowListener, ItemListener {
+
+	/**
+	 * @param
+	 */
+	public static Toolkit kit = Toolkit.getDefaultToolkit();
+	private static Dimension screen = kit.getScreenSize();
+	private ResourceLocator rl = new ResourceLocator(); 
+	private ImagePanel flag = new ImagePanel(rl.getImage());
+	private JComboBox country = new JComboBox();
+	private JButton button = new JButton();
+	private boolean isPlaying = false;
+	private Container pane = getContentPane();
+	private AudioClip audio = rl.changeAudio();
+	
+	/**
+	 * 
+	 */
+	public DisplayImagePlayAudio() {
+		addButton();
+		addDropDown();
+		setWindow();
+	}
+
+	/**
+	 * 
+	 */
+	private void addButton() {
+		if (!isPlaying)
+			button.setText("Play");
+		
+		button.addActionListener(new ActionListener() {
+
+			public void actionPerformed(ActionEvent arg0) {
+				if (isPlaying) {
+					audio.stop();
+					isPlaying = false;
+					button.setText("Play");
+				} else {
+					audio.play();
+					isPlaying = true;
+					button.setText("Pause");
+				}
+			}
+
+		});
+	}
+	
+	private void setWindow() {
+		pane.add(flag, BorderLayout.CENTER);
+		pane.add(country, BorderLayout.NORTH);
+		pane.add(button, BorderLayout.SOUTH);
+		pack();
+		setSize(screen.width / 2, screen.height / 2);
+		setLocation(screen.width / 4, screen.height / 4);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setTitle("Anthem Media Player");
+		setVisible(true);		
+	}
+
+	/**
+	 * This method adds the courties to the dropdown menu and adds the dropdown eventlistener
+	 */
+	private void addDropDown() {
+		country.addItem("Denmark");
+		country.addItem("USA");
+		country.addItem("UK");
+		country.addItem("Norway");
+		country.addItem("China");
+		country.addItem("India");
+		country.addItem("Germany");
+		country.addItemListener(this);
+	}
+
+	/**
+	 * If the user closes the window while playing music, this method stops the music from playing
+	 */
+	public void windowClosing(WindowEvent arg0) {
+		audio.stop();
+	}
+
+	/**
+	 * 
+	 */
+	public void itemStateChanged(ItemEvent arg0) {
+		audio.stop();
+		button.setText("Play");
+		button.setFocusable(true);
+		rl.setSelected((String) country.getSelectedItem());
+		flag.showImage(rl.changeImage());
+		audio = rl.changeAudio();
+	}
+	
+	/**
+	 * 
+	 */
+	public static void main(String[] args) {
+		try {
+			new DisplayImagePlayAudio();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	/**
+	 * Unused method
+	 */
+	public void windowActivated(WindowEvent arg0) {
+	}
+
+	/**
+	 * Unused method
+	 */
+	public void windowClosed(WindowEvent arg0) {
+	}
+
+	/**
+	 * Unused method
+	 */
+	public void windowDeactivated(WindowEvent arg0) {
+	}
+
+	/**
+	 * Unused method
+	 */
+	public void windowDeiconified(WindowEvent arg0) {
+	}
+
+	/**
+	 * Unused method
+	 */
+	public void windowIconified(WindowEvent arg0) {
+	}
+
+	/**
+	 * Unused method
+	 */
+	public void windowOpened(WindowEvent arg0) {
+	}
+	
+}

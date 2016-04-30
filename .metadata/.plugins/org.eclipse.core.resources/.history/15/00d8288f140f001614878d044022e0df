@@ -1,0 +1,31 @@
+package multimediaProgramming.finalAssignment;
+
+// Define the panel for showing an image
+import java.awt.*;
+import javax.swing.*;
+
+public class ImagePanel extends JPanel {
+	// Image filename
+	private String filename;
+
+	private Image image = null;
+
+	public ImagePanel() {
+	}
+
+	public ImagePanel(Image image) {
+		this.image = image;
+	}
+	
+	public void showImage(Image image) {
+		this.image = image;
+		repaint();
+	}
+
+	public void paintComponent(Graphics g) {
+		super.paintComponent(g);
+
+		if (image != null)
+			g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
+	}
+}

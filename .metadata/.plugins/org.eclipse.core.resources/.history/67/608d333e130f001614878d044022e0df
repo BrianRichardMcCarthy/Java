@@ -1,0 +1,50 @@
+package multimediaProgramming.finalAssignment;
+
+import java.applet.Applet;
+import java.applet.AudioClip;
+import java.awt.Image;
+import java.net.URL;
+
+import javax.swing.ImageIcon;
+
+public class ResourceLocator {
+	private URL urlAudio;
+	private AudioClip audio;
+	private String[] info = { "src\\multimediaProgramming\\finalAssignment\\", "flags\\", "anthems\\", "Denmark.wav",
+			"Denmark.jpg", "Denmark", ".jpg", ".wav" };
+	private String selected = info[5];
+	private String currentAnthem = info[2] + selected + info[7];
+	//
+
+	public Image getImage() {
+		return new ImageIcon(info[0] + info[1] + info[4]).getImage();
+	}
+
+	public Image getImage(String flag) {
+		return new ImageIcon(info[0] + info[1] + flag + info[6]).getImage();
+	}
+
+	public void setSelected(String selected) {
+		this.selected = selected;
+	}
+	
+	public AudioClip changeAudio() {
+		currentAnthem = info[2] + selected + info[7];
+		urlAudio = DisplayImagePlayAudio.class.getResource(currentAnthem);
+		audio = Applet.newAudioClip(urlAudio);
+		return audio;
+	}
+
+	public String toString() {
+		return currentAnthem;
+	}
+	
+	public String getURL() {
+		return (String) info[2] + selected + info[7];
+	}
+	
+	public Image changeImage() {
+		String currentFlag = selected;
+		return getImage(currentFlag);
+	}
+}
