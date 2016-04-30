@@ -21,10 +21,10 @@ import javax.swing.JLabel;
 
 public class MediaPlayer extends JFrame implements WindowListener, ItemListener {
 
-	public static Toolkit kit = Toolkit.getDefaultToolkit();
-	private static Dimension screen = kit.getScreenSize();
 	private String dir = "src\\multimediaProgramming\\finalAssignment\\", slashFlag = "flags\\",
 			slashAudio = "anthems\\", currentAnthem = "Denmark.wav", currentFlag = "Denmark.jpg", selected;
+	public static Toolkit kit = Toolkit.getDefaultToolkit();
+	private static Dimension screen = kit.getScreenSize();
 	private ImageIcon flag = new ImageIcon(dir + slashFlag + currentFlag);
 	private AudioClip audio;
 	private JLabel labelImage = new JLabel(flag);
@@ -38,7 +38,7 @@ public class MediaPlayer extends JFrame implements WindowListener, ItemListener 
 	}
 
 	public MediaPlayer() {
-		changeAudio();
+		setAudio();
 		if (!isPlaying)
 			button.setText("Play");
 		button.addActionListener(new ActionListener() {
@@ -56,16 +56,20 @@ public class MediaPlayer extends JFrame implements WindowListener, ItemListener 
 			}
 
 		});
+		setSize(screen.width / 2, screen.height / 2);
+		setLocation(screen.width / 4, screen.height / 4);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		addDropDown();
 		add(labelImage, BorderLayout.CENTER);
 		add(country, BorderLayout.NORTH);
 		add(button, BorderLayout.SOUTH);
 		pack();
-		setSize(screen.width / 2, screen.height / 2);
-		setLocation(screen.width / 4, screen.height / 4);
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setVisible(true);
 
+	}
+
+	private void setAudio() {
+		changeAudio();
 	}
 
 	private void changeAudio() {
@@ -75,11 +79,11 @@ public class MediaPlayer extends JFrame implements WindowListener, ItemListener 
 		} catch (Exception e) {
 		}
 	}
-
+	
 	private void addDropDown() {
-		country.addItem("Denmark");
 		country.addItem("USA");
 		country.addItem("UK");
+		country.addItem("Denmark");
 		country.addItem("Norway");
 		country.addItem("China");
 		country.addItem("India");
@@ -125,8 +129,6 @@ public class MediaPlayer extends JFrame implements WindowListener, ItemListener 
 	public void itemStateChanged(ItemEvent arg0) {
 		// TODO Auto-generated method stub
 		audio.stop();
-		button.setText("Play");
-		button.setFocusable(true);
 		String[] fileType = { ".jpg", ".wav" };
 		selected = (String) country.getSelectedItem();
 		currentAnthem = selected + fileType[1];
@@ -135,13 +137,14 @@ public class MediaPlayer extends JFrame implements WindowListener, ItemListener 
 		flag.setImage(new ImageIcon(currentFlag).getImage());
 		labelImage.imageUpdate(flag.getImage(), 0, 0, 100, 100, 100);
 		labelImage.repaint();
-		changeAudio();
+		setAudio();
 	}
 
 	public static void main(String[] args) {
 		try {
 			new MediaPlayer();
 		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 

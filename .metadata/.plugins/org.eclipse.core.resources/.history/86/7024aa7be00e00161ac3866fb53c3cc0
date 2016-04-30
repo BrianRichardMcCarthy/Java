@@ -77,9 +77,9 @@ public class MediaPlayer extends JFrame implements WindowListener, ItemListener 
 	}
 
 	private void addDropDown() {
-		country.addItem("Denmark");
 		country.addItem("USA");
 		country.addItem("UK");
+		country.addItem("Denmark");
 		country.addItem("Norway");
 		country.addItem("China");
 		country.addItem("India");
@@ -125,8 +125,6 @@ public class MediaPlayer extends JFrame implements WindowListener, ItemListener 
 	public void itemStateChanged(ItemEvent arg0) {
 		// TODO Auto-generated method stub
 		audio.stop();
-		button.setText("Play");
-		button.setFocusable(true);
 		String[] fileType = { ".jpg", ".wav" };
 		selected = (String) country.getSelectedItem();
 		currentAnthem = selected + fileType[1];
@@ -142,6 +140,7 @@ public class MediaPlayer extends JFrame implements WindowListener, ItemListener 
 		try {
 			new MediaPlayer();
 		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
