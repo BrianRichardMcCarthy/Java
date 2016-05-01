@@ -115,7 +115,7 @@
                   <children xsi:type="advanced:Placeholder" xmi:id="_ItSXqg4nEeazzJnOAf17Dw" elementId="org.eclipse.mylyn.tasks.ui.views.tasks" toBeRendered="false" ref="_ItTmYA4nEeazzJnOAf17Dw"/>
                 </children>
               </children>
-              <children xsi:type="basic:PartStack" xmi:id="_ItSXqw4nEeazzJnOAf17Dw" elementId="bottom" containerData="2905" selectedElement="_ItSXrg4nEeazzJnOAf17Dw">
+              <children xsi:type="basic:PartStack" xmi:id="_ItSXqw4nEeazzJnOAf17Dw" elementId="bottom" containerData="2905" selectedElement="_ItSXsQ4nEeazzJnOAf17Dw">
                 <tags>org.eclipse.e4.secondaryDataStack</tags>
                 <tags>General</tags>
                 <tags>Terminal</tags>
@@ -251,7 +251,7 @@
         <tags>EditorStack</tags>
         <tags>active</tags>
         <children xsi:type="basic:Part" xmi:id="_ItS_mA4nEeazzJnOAf17Dw" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="DisplayImagePlayAudio.java" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/obj16/jcu_obj.png" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;DisplayImagePlayAudio.java&quot; partName=&quot;DisplayImagePlayAudio.java&quot; title=&quot;DisplayImagePlayAudio.java&quot; tooltip=&quot;College/src/multimediaProgramming/finalAssignment/DisplayImagePlayAudio.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/College/src/multimediaProgramming/finalAssignment/DisplayImagePlayAudio.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;2821&quot; selectionTopPixel=&quot;1173&quot;/>&#xD;&#xA;&lt;/editor>"/>
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;DisplayImagePlayAudio.java&quot; partName=&quot;DisplayImagePlayAudio.java&quot; title=&quot;DisplayImagePlayAudio.java&quot; tooltip=&quot;College/src/multimediaProgramming/finalAssignment/DisplayImagePlayAudio.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/College/src/multimediaProgramming/finalAssignment/DisplayImagePlayAudio.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;1938&quot; selectionTopPixel=&quot;432&quot;/>&#xD;&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
           <tags>org.eclipse.jdt.ui.CompilationUnitEditor</tags>
           <tags>removeOnHide</tags>
@@ -273,6 +273,12 @@
             <tags>menuContribution:popup</tags>
             <tags>popup:#OverviewRulerContext</tags>
           </menus>
+        </children>
+        <children xsi:type="basic:Part" xmi:id="_0AY7sA_cEea37N3vibB6sw" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="ResourceLocator.java" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/obj16/jcu_obj.png" closeable="true">
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;ResourceLocator.java&quot; partName=&quot;ResourceLocator.java&quot; title=&quot;ResourceLocator.java&quot; tooltip=&quot;College/src/multimediaProgramming/finalAssignment/ResourceLocator.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/College/src/multimediaProgramming/finalAssignment/ResourceLocator.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;1189&quot; selectionTopPixel=&quot;266&quot;/>&#xD;&#xA;&lt;/editor>"/>
+          <tags>Editor</tags>
+          <tags>org.eclipse.jdt.ui.CompilationUnitEditor</tags>
+          <tags>removeOnHide</tags>
         </children>
       </children>
     </sharedElements>
@@ -358,7 +364,7 @@
         <tags>ViewMenu</tags>
         <tags>menuContribution:menu</tags>
       </menus>
-      <toolbar xmi:id="_ItTmHg4nEeazzJnOAf17Dw" elementId="org.eclipse.jdt.ui.JavadocView"/>
+      <toolbar xmi:id="_ItTmHg4nEeazzJnOAf17Dw" elementId="org.eclipse.jdt.ui.JavadocView" visible="false"/>
     </sharedElements>
     <sharedElements xsi:type="basic:Part" xmi:id="_ItTmHw4nEeazzJnOAf17Dw" elementId="org.eclipse.jdt.ui.SourceView" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Declaration" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/eview16/source.png" tooltip="" closeable="true">
       <tags>View</tags>
@@ -377,7 +383,6 @@
       <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;view/>"/>
       <tags>View</tags>
       <tags>categoryTag:General</tags>
-      <tags>highlighted</tags>
       <menus xmi:id="_ItTmJA4nEeazzJnOAf17Dw" elementId="org.eclipse.ui.console.ConsoleView">
         <tags>ViewMenu</tags>
         <tags>menuContribution:menu</tags>
@@ -386,7 +391,7 @@
         <tags>menuContribution:popup</tags>
         <tags>popup:org.eclipse.debug.ui.ProcessConsoleType.#ContextMenu</tags>
       </menus>
-      <toolbar xmi:id="_ItTmJg4nEeazzJnOAf17Dw" elementId="org.eclipse.ui.console.ConsoleView" visible="false"/>
+      <toolbar xmi:id="_ItTmJg4nEeazzJnOAf17Dw" elementId="org.eclipse.ui.console.ConsoleView"/>
     </sharedElements>
     <sharedElements xsi:type="basic:Part" xmi:id="_ItTmNQ4nEeazzJnOAf17Dw" elementId="org.eclipse.ui.views.BookmarkView" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Bookmarks" iconURI="platform:/plugin/org.eclipse.ui.ide/icons/full/eview16/bkmrk_nav.png" tooltip="" closeable="true">
       <tags>View</tags>
@@ -614,7 +619,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_ItTmjw4nEeazzJnOAf17Dw" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_wC0xQA7cEea2bOA4VcvTRw" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_ItdXfA4nEeazzJnOAf17Dw"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_tZ8zMA_cEea37N3vibB6sw" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_ItdXfA4nEeazzJnOAf17Dw"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_ItTmqg4nEeazzJnOAf17Dw" elementId="additions" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -665,7 +670,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_ItUNHA4nEeazzJnOAf17Dw" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_wC634w7cEea2bOA4VcvTRw" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_ItdXIg4nEeazzJnOAf17Dw"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_taC51A_cEea37N3vibB6sw" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_ItdXIg4nEeazzJnOAf17Dw"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_ItUNJw4nEeazzJnOAf17Dw" elementId="group.editor" toBeRendered="false">
         <tags>toolbarSeparator</tags>

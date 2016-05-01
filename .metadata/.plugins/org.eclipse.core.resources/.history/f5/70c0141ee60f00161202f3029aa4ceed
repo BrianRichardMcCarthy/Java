@@ -29,15 +29,18 @@ public class ResourceLocator {
 	private URL urlAudio;
 	private AudioClip audio;
 	private String[] info = { "src\\multimediaProgramming\\finalAssignment\\", "flags\\", "anthems\\", "Denmark", ".jpg", ".wav" };
+	private String selected;
+	private String currentAnthem = info[2] + info[3] + info[5];
+	//
 
 	/**
 	 * Accessor for default Image. Use getImage(String flag) to change image
 	 * @return image located: src\multimediaProgramming\finalAssignment\flags\Denmark.jpg
 	 */
 	public Image getImage() {
-		return new ImageIcon(info[0] + info[1] + info[3] + info[4]).getImage();
+		return new ImageIcon(info[0] + info[1] + info[3] + info[5]).getImage();
 	}
-	
+
 	/**
 	 * Accessor for selected Country. Used to change current flag.
 	 * @param flag (String) (chosen country)
@@ -75,6 +78,7 @@ public class ResourceLocator {
 	 * @return A different countries' flag
 	 */
 	public Image changeImage() {
-		return getImage(info[3]);
+		String currentFlag = selected;
+		return getImage(currentFlag);
 	}
 }

@@ -29,22 +29,25 @@ public class ResourceLocator {
 	private URL urlAudio;
 	private AudioClip audio;
 	private String[] info = { "src\\multimediaProgramming\\finalAssignment\\", "flags\\", "anthems\\", "Denmark", ".jpg", ".wav" };
+	private String selected = info[3] +info[5];
+	private String currentAnthem = info[2] + selected + info[7];
+	//
 
 	/**
 	 * Accessor for default Image. Use getImage(String flag) to change image
 	 * @return image located: src\multimediaProgramming\finalAssignment\flags\Denmark.jpg
 	 */
 	public Image getImage() {
-		return new ImageIcon(info[0] + info[1] + info[3] + info[4]).getImage();
+		return new ImageIcon(info[0] + info[1] + info[3] + info[5]).getImage();
 	}
-	
+
 	/**
 	 * Accessor for selected Country. Used to change current flag.
 	 * @param flag (String) (chosen country)
 	 * @return image located: src\multimediaProgramming\finalAssignment\flags\(flag parameter).jpg
 	 */
 	private Image getImage(String flag) {
-		return new ImageIcon(info[0] + info[1] + flag + info[4]).getImage();
+		return new ImageIcon(info[0] + info[1] + flag + info[6]).getImage();
 	}
 
 	/**
@@ -52,7 +55,7 @@ public class ResourceLocator {
 	 * @param selected (String) (assigned to selected instance variable)
 	 */
 	public void setSelected(String selected) {
-		info[3] = selected;
+		this.selected = selected;
 	}
 	
 	/**
@@ -60,8 +63,11 @@ public class ResourceLocator {
 	 * @return audio (AudioClip)
 	 */
 	public AudioClip changeAudio() {
+		// String of the location + anthem name + anthem extension
+		currentAnthem = info[2] + selected + info[7];
+		
 		// url for the clip
-		urlAudio = this.getClass().getResource(info[2] + info[3] + info[5]);
+		urlAudio = this.getClass().getResource(currentAnthem);
 		
 		// over rides the previous clip in audio
 		audio = Applet.newAudioClip(urlAudio);
@@ -75,6 +81,7 @@ public class ResourceLocator {
 	 * @return A different countries' flag
 	 */
 	public Image changeImage() {
-		return getImage(info[3]);
+		String currentFlag = selected;
+		return getImage(currentFlag);
 	}
 }

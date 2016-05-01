@@ -37,6 +37,10 @@ public class ResourceLocator {
 	public Image getImage() {
 		return new ImageIcon(info[0] + info[1] + info[3] + info[4]).getImage();
 	}
+
+	public String toString() {
+		return info[0] + info[1] + info[3] + info[5];
+	}
 	
 	/**
 	 * Accessor for selected Country. Used to change current flag.
